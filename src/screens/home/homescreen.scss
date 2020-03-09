@@ -1,0 +1,32 @@
+.screen-container{
+    background: #E6E6E6;
+    height: 100%;
+    width: 100%;
+    .container{
+        display: flex ;
+        flex-direction: column;
+        align-items: center;
+        textarea{
+            width: 413px;
+            margin-top: 10px;
+        }
+        .data-container{
+            display: flex;
+            flex-direction: row;
+            margin-top: 69px;
+            .date-input-container:first-child{
+                margin-right: 36px;
+            }
+        }
+    }   
+    input[type="submit"] {
+        border-radius: 5px;
+        background-color: #1F80E1;
+        margin-top: 12px;
+        width: 102px;
+        height: 28px;
+        color:white;
+        border: none;
+    }
+} 
+   

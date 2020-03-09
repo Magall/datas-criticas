@@ -1,0 +1,24 @@
+.header-container{
+    display: flex;
+    flex-direction: row;
+    padding-left: 16px;
+    padding-top: 36px;
+    justify-content: space-around;
+    img {
+        width: 100px;
+        height: 44px;
+    }
+    p{
+        // padding-left: 30%;
+        font-size: 26px;
+    }    
+    ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        li{
+            list-style-type: none;
+            margin-right: 30px;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.date-input-container{
+    display: flex;
+    flex-direction: column;
+    span{
+        display: inherit;
+
+    }
+    #input-container{
+        display: flex;
+        flex-direction: row;
+        #data-critica{
+            border: 1px solid rgba(158, 155, 155, 0.5);
+            border-right: none;
+            border-radius:5px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        img{
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
