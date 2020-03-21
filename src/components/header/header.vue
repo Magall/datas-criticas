@@ -3,8 +3,8 @@
     <img src="../../assets/anima.png" class="asd" />
     <p>SISTEMA GERENCIADOR DE DATAS CRÍTICAS</p>
     <ul>
-      <li>Cadastrar</li>
-      <li>Visualizar</li>
+      <li><router-link to="/">Cadastrar</router-link></li>
+      <li><router-link to="/view">Visualizar</router-link></li>
     </ul>
   </div>
 </template>
