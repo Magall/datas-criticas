@@ -2,58 +2,35 @@
   <div class="view-screen-container">
     <Header />
     <div class="dates-container">
-
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-        <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
-    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
-     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
-      <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
- <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
-       <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
-
+      <DateElement v-for="data in datas" :key="data.id" :initialDate="data.initialDate"  :endDate ="data.endDate"  :msg = "data.description" :departamento = "data.nome" />
     </div>
   </div>
 </template>
 <script>
 import Header from '@/components/header/header'
 import DateElement from '@/components/dateElement/dateElement'
+import axios from 'axios'
 export default {
   name: 'HomeScreen',
   components: {
     Header,
     DateElement
+  },
+  data () {
+    return {
+      datas: null
+    }
+  },
+  mounted () {
+    let axiosConfig = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Accept': 'application/json'
+      }
+    }
+    axios
+      .get('https://localhost:44307/api/DataCritica/', axiosConfig)
+      .then(response => (this.datas = response.data))
   }
 }
 </script>
