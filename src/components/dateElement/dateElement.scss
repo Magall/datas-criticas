@@ -1,36 +1,24 @@
 .date-element-container{
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
+    margin-right: 10px;
     width: 500px;
-    
-    
     background-color: greenyellow;
+   
     .row{
         display: flex;
-        flex-direction: row;
-        p{
-            font-weight: bold;
-        }
-        .msg{
-            p{
-                font-size: 30px;
-            }
-        }
-        .dates{
-            display:flex;
-            flex-direction: row;
-            p{
-                margin-left: 15px;
-                font-size: 25px;
-                text-decoration: underline;
-            }
-        }
-        .space{
-            min-width: 50px;
+        justify-content: space-between;
+        padding-right: 20px;
+        padding-left: 20px;
+        // flex:1;
+        div{
             max-width: 50%;
-            min-height: 50px;
-            margin: 0;
         }
-    }
-    
+        p{
+            font-size: 18px;
+            font-weight: bold;
+           text-align: left;
+           
+           
+        }
+    }    
 }

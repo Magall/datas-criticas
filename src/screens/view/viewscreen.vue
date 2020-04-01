@@ -1,7 +1,49 @@
 <template>
   <div class="view-screen-container">
     <Header />
-    <DateElement />
+    <div class="dates-container">
+
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+        <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "NAPS" />
+    <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
+     <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
+      <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
+ <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
+       <DateElement initialDate="22/04/2020"  endDate ="23/04/2020"  msg = "teste" departamento = "Financeiro" />
+
+    </div>
   </div>
 </template>
 <script>

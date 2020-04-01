@@ -1,0 +1,15 @@
+.view-screen-container{
+    max-height: 100vh; 
+  
+  .dates-container{
+    display: -ms-flexbox;           
+    display: -webkit-flex;    
+    display: flex;
+    -webkit-flex-flow: wrap ; 
+    flex-flow: wrap ;
+    flex:1;
+    justify-content: center;
+
+
+  }
+}
