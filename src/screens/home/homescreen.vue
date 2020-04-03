@@ -1,7 +1,8 @@
 <template>
   <div class="screen-container">
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
     <Header />
-    <form action="https://localhost:44307/api/DataCritica/" method="post">
+    <form action="https://localhost:44307/api/DataCritica/" method="post" target="dummyframe">
       <div class="container">
       <div class="data-container">
         <DateInput text="Data Inicial" img="date-icon.png" inputName="initialDate" />

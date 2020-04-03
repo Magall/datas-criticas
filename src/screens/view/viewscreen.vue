@@ -2,7 +2,7 @@
   <div class="view-screen-container">
     <Header />
     <div class="dates-container">
-      <DateElement v-for="data in datas" :key="data.id" :initialDate="data.initialDate"  :endDate ="data.endDate"  :msg = "data.description" :departamento = "data.nome" />
+      <DateElement v-for="data in datas" :key="data.id" :initialDate="moment(data.initialDate).format('DD/MM/YYYY')"  :endDate ="moment(data.endDate).format('DD/MM/YYYY')"  :msg = "data.description" :departamento = "data.nome" />
     </div>
   </div>
 </template>
@@ -10,6 +10,7 @@
 import Header from '@/components/header/header'
 import DateElement from '@/components/dateElement/dateElement'
 import axios from 'axios'
+// var moment = require('moment');
 export default {
   name: 'HomeScreen',
   components: {
@@ -29,7 +30,7 @@ export default {
       }
     }
     axios
-      .get('https://localhost:44307/api/DataCritica/', axiosConfig)
+      .get('https://localhost:44307/api/DataCritica/GetMonthAhead', axiosConfig)
       .then(response => (this.datas = response.data))
   }
 }
