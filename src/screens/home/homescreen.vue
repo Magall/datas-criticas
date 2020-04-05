@@ -1,19 +1,21 @@
 <template>
-  <div class="screen-container">
-    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  <div class='screen-container'>
+    <iframe name='dummyframe' id='dummyframe' style='display: block; position=absolute'> {{resp}}</iframe>
     <Header />
-    <form action="https://localhost:44307/api/DataCritica/" method="post" target="dummyframe">
-      <div class="container">
-      <div class="data-container">
-        <DateInput text="Data Inicial" img="date-icon.png" inputName="initialDate" />
-        <DateInput text="Data Final" img="date-icon.png" inputName="endDate" />
+    <!-- <form action='https://localhost:44307/api/DataCritica/' method='post' target=''> -->
+    <form v-on:submit ='submit' >
+      <div class='container'>
+      <div class='data-container'>
+        <DateInput v-model='initialDate' text='Data Inicial' img='date-icon.png' inputName='initialDate'  />
+        <DateInput v-model ='endDate' text='Data Final' img='date-icon.png' inputName='endDate'  />
       </div>
-      <textarea id="description" rows="8" cols="50" name="description"/>
-      <select name="nome" id="" >
-        <option v-for="area in areas" :key="area.nome" :value="area.nome" name="nome">{{area.nome}}</option>
+      <textarea v-model='desc' id='description' rows='8' cols='50' name='description' required/>
+      <select name='nome' id='' v-model='nome' required >
+        <option v-for='area in areas' :key='area.nome' :value='area.nome' name='nome'>{{area.nome}}</option>
       </select>
     </div>
-    <input type="submit" value="Enviar">
+    <input type='submit' value='Enviar'>
+    {{resp}}
       </form>  </div>
 </template>
 <script>
@@ -30,7 +32,50 @@ export default {
   },
   data () {
     return {
-      areas: null
+      areas: null,
+      resp: null,
+      initialDate: '',
+      endDate: '',
+      desc: '',
+      nome: ''
+    }
+  },
+  methods: {
+    submit: function (event) {
+      // let axiosConfig = {
+      //   headers: {
+      //     'Access-Control-Allow-Origin': '*',
+      //     'Accept': 'application/json'
+      //   }
+      // }
+      let data = {
+        initialDate: this.initialDate,
+        endDate: this.endDate,
+        description: this.desc,
+        nome: this.nome
+      }
+      console.log('desc= ' + data.initialDate + ' ' + data.endDate + ' ' + data.nome + ' ' + data.description)
+      axios({
+        method: 'post',
+        url: 'https://localhost:44307/api/DataCritica/',
+        data: {
+          'initialDate': this.initialDate,
+          'endDate': this.lastName,
+          'description':this.desc,
+          'nome': this.nome
+        }
+      })
+      .then(function (response) {
+        console.log(response);
+        alert(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert(error);
+      });
+    },
+    updateValue: function (value) {
+      this.$emit('input', value)
     }
   },
   mounted () {
@@ -46,7 +91,7 @@ export default {
   }
 }
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import "./homescreen.scss";
+<!-- Add 'scoped' attribute to limit CSS to this component only -->
+<style lang='scss' scoped>
+@import './homescreen.scss';
 </style>

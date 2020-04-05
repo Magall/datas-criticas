@@ -2,7 +2,14 @@
   <div class="date-input-container">
     <span>{{text}}</span>
     <div id="input-container">
-      <input type="date" :name=inputName :id=inputName />
+      <input
+        type="date"
+        :name="inputName"
+        :id="inputName"
+        :value="value"
+        required
+        @input="updateValue($event.target.value)"
+      />
       <img :src="require('@/assets/' + img)" />
     </div>
   </div>
@@ -16,11 +23,21 @@ export default {
       type: String,
       default: ''
     },
+    value: {
+      type: String
+    },
     inputName: {
       type: String,
       required: true
+    },
+    model: {
+      type: String
     }
-
+  },
+  methods: {
+    updateValue (value) {
+      this.$emit('input', value)
+    }
   }
 }
 </script>
