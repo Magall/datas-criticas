@@ -30,7 +30,7 @@ export default {
       }
     }
     axios
-      .get('https://localhost:44307/api/DataCritica/GetMonthAhead', axiosConfig)
+      .get('https://localhost:5001/api/DataCritica/GetMonthAhead/', axiosConfig)
       .then(response => (this.datas = response.data))
   }
 }
